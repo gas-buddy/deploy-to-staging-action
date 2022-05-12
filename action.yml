@@ -22,9 +22,9 @@ runs:
         SERVICE_NAME: ${{ inputs.service-name }}
    - uses: actions/checkout@v2
    - run: execute.sh
-      shell: bash
-      working-directory: ${{ github.action_path }}
-      env:
+     shell: bash
+     working-directory: ${{ github.action_path }}
+     env:
         COMMIT_SHA: ${{ github.run_id }}_${{ github.sha }}
         DEPLOYBOT_SERVICE_URL: ${{ inputs.deploybot-service-url }}
         SERVICE_NAME: ${{ inputs.service-name }}
