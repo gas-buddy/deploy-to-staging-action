@@ -10,7 +10,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ./run.sh
+    - run: execute.sh
       shell: bash
       env:
         COMMIT_SHA: ${{ github.run_id }}_${{ github.sha }}
