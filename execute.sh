@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ -z ${SERVICE_NAME} || -z ${COMMIT_SHA} ]];
 then
