@@ -10,10 +10,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ls -la
-      shell: bash
-      working-directory: ${{ github.action_path }}
-    - run: execute.sh
+    - run: |
+        ls -la
+        cat execute.sh
+        ./execute.sh
       shell: bash
       working-directory: ${{ github.action_path }}
       env:
