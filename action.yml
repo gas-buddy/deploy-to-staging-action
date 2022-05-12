@@ -1,0 +1,18 @@
+name: 'Deploy k8s'
+description: 'This action will deploy ecr image to k8s through deploy-bot'
+inputs:
+  deploybot-service-url:
+    description: 'URL to your deploy service'
+    required: true
+  service-name:
+    description: 'Name of the microservice to be deployed'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: run.sh
+      shell: bash
+      env:
+        COMMIT_SHA: ${{ github.run_id }}_${{ github.sha }}
+        DEPLOYBOT_SERVICE_URL: ${{ inputs.deploybot-service-url }}
+        SERVICE_NAME: ${{ inputs.service-name }}
