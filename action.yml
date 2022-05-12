@@ -10,6 +10,8 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: ls -la
+      shell: bash
     - run: execute.sh
       shell: bash
       env:
